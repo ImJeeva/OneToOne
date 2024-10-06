@@ -21,7 +21,7 @@ public class Orders {
 	@Column(name = "price")
 	private int price;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = {CascadeType.DETACH,CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
 	@JoinColumn(name = "cust")
 	private  Customer customer;
 	
